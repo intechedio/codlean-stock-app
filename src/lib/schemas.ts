@@ -91,8 +91,8 @@ export const StockInLineSchema = z
     unitPrice: z.number().nonnegative().optional(),
     total: z.number().nonnegative().optional(),
   })
-/*   .passthrough()
- */  .superRefine((val, ctx) => {
+  .passthrough()
+  .superRefine((val, ctx) => {
   if (val.unitPrice != null) {
     const expected = Number((val.qty * val.unitPrice).toFixed(2));
     const total = Number((val.total ?? expected).toFixed(2));
