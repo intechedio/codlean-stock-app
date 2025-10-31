@@ -1,18 +1,18 @@
 # Codlean Stock App
 
-Local-first stock & warehouse management application built with React, TypeScript, Zustand, and TailwindCSS.
+Stock & warehouse management application built with React, TypeScript, Zustand, and TailwindCSS.
 
 ## Features
 
 - **Authentication**: Login with admin/12345
 - **Warehouse Management**: Create, edit (inline with auto-save), and manage warehouses
-- **Inventory Management**: 
+- **Inventory Management**:
   - Stock In (with serial tracking support)
   - Stock Out (with lot selection)
   - Real-time stock tracking per warehouse
   - Movement history
 - **Global Stock View**: System-wide aggregated stock with search and pagination
-- **Data Persistence**: All data persists to localStorage (key: `codlean-stock-app`)
+- **Data Persistence**: All data persists to localStorage.
 
 ## Tech Stack
 
@@ -52,11 +52,13 @@ npm run build
 ### Testing
 
 First install test dependencies:
+
 ```bash
 npm install -D vitest @vitest/ui jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
 Then run tests:
+
 ```bash
 npm test
 ```
@@ -71,31 +73,24 @@ npm run lint
 
 ```
 src/
-  app/              # App routing and layout
-  components/       # Reusable UI components
+  app/             # app routing and layout
+  components/      # reusable UI components
     form/          # React Hook Form wrappers
-    table/         # Table primitives
-    ui/            # shadcn-like primitives
-  features/         # Feature modules
+    table/         # table primitives
+    ui/            # shadcn components
+  features/        # features
     auth/          # Authentication
-    catalog/       # Materials, suppliers, customers
+    catalog/       # materials, suppliers, customers
     warehouses/    # Warehouse management
     inventory/     # Stock management
     stocks/        # Global stock view
-  lib/             # Utilities, schemas, helpers
+  lib/             # utilities, schemas, helpers
 ```
 
 ## Default Credentials
 
 - Username: `admin`
 - Password: `12345`
-
-## Data Model
-
-- **Warehouses**: Production or Loading warehouses with active/inactive status
-- **Materials**: Items with tracking type (Serial or Normal) and units
-- **Stock Lots**: Warehouse-specific stock records (aggregated for Normal, per-serial for Seri Takip)
-- **Movements**: IN/OUT transactions with line items
 
 ## Notes
 
